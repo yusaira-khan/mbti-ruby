@@ -1,4 +1,4 @@
-
+require 'csv'
 class Preference
   attr_accessor :opposite
   attr_accessor :percent
