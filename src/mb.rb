@@ -7,18 +7,26 @@ class Personality
   end
 end
 
+class TraitsList
+end
+class AspectsList
+end
+class PreferencesList
+end
 class Trait
   attr_reader :energy
   attr_reader :mind
   attr_reader :nature
   attr_reader :tactics
-  attr_reader :percentage
   attr_reader :role_name
   attr_reader :initials
   attr_reader :link
 
   def initialize
     # load data
+  end
+
+  def percentage
   end
 
 end
@@ -32,6 +40,7 @@ class Aspect
   def dominant
     #get dominant between right and left
   end
+
 end
 
 class Preference
@@ -44,6 +53,8 @@ class Preference
     #load
   end
 
+  def adjusted_percent
+  end
   def print
   end
 end
