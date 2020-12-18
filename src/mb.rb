@@ -6,6 +6,7 @@ class Personality
     #sort
   end
 end
+
 class Trait
   attr_reader :energy
   attr_reader :mind
@@ -32,13 +33,15 @@ class Aspect
     #get dominant between right and left
   end
 end
+
 class Preference
-  attr_reader :opposite
+  attr_accessor :opposite
   attr_accessor :percent
   attr_reader :name
   attr_reader :initials
 
   def initialize
+    #load
   end
 
   def print
