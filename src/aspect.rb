@@ -10,10 +10,16 @@ class Aspect
     @left = l
     @right = r
     @link = link
+    @left.opposite = r
+    @right.opposite = l
   end
 
   def dominant
-    #get dominant between right and left
+    if @left.fraction >= @right.fraction
+      @left
+    else
+      @right
+    end
   end
 
 end

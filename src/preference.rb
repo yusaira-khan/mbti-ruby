@@ -12,7 +12,7 @@ class Preference
   attr_accessor :opposite
   attr_reader :name
   attr_reader :initial
-  attr_writer :fraction
+  attr_accessor :fraction
 
   def initialize (name:, initial:)
     @name = name
