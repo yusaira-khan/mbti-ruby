@@ -13,8 +13,15 @@ RSpec.describe PreferencesList do
   end
 end
 
-RSpec.describe PreferencesList do
-  it 'constructor intro' do
-    p = Preference.new(name: 'Intro', initial: 'i')
+
+RSpec.describe Preference do
+  let(:intro) { Preference.new(name: 'Intro', initial: 'i') }
+  let(:extro) { Preference.new(name: 'Extro', initial: 'e') }
+  it 'synced %' do
+    intro.opposite = extro
+    intro.sync_percent 10
+    expect(intro.display_percent).to eq('10.0%')
+    expect(extro.display_percent).to eq('90.0%')
+    expect(intro.as_formatted_text).to eq('Intro(I): 10.0%')
   end
 end
