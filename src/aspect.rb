@@ -5,7 +5,11 @@ class Aspect
   attr_reader :right
   attr_reader :name
   attr_reader :link
-  def initialize
+  def initialize (name:,l:,r:,link:)
+    @name = name
+    @left = l
+    @right = r
+    @link = link
   end
 
   def dominant
