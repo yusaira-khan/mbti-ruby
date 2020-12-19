@@ -19,3 +19,26 @@ RSpec.describe Aspect do
     expect(a.dominant).to eq(e)
   end
 end
+
+RSpec.describe AspectsCollection do
+  it 'function' do
+    # arrange
+    MockPref = Struct.new(:collection)
+    i = Preference.new(initial:'i', name:'In')
+    e = Preference.new(initial:'e', name:'Ex')
+    collection = {'i'=>i,'e'=>e}
+    mock = MockPref.new(collection)
+    row = {'name'=>'mind', 'left'=> 'i', 'right'=> 'e', 'link'=>''}
+
+    #act
+    method = create_map_function_with_preference mock
+    aspect_hash =  method.call(row)
+
+    #assert
+    aspect_key = aspect_hash[0]
+    aspect = aspect_hash[1]
+    expect(aspect.left).to eq(i)
+    expect(aspect.right).to eq(e)
+    expect(aspect_key).to eq('mind')
+  end
+end

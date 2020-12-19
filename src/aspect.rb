@@ -23,6 +23,17 @@ class Aspect
   end
 
 end
-
 class AspectsCollection
+  attr_reader :collection
+  def initialize(p)
+    table = CSV.parse(File.read('./data/aspect.csv'), headers: true)
+  end
+end
+def create_map_function_with_preference(prefs)
+  Proc.new { |row| [row['name'],
+                    Aspect.new(name: row['name'],
+                               link: row['link'],
+                               l: prefs.collection[row['left']],
+                               r: prefs.collection[row['right']]
+                              )]}
 end
