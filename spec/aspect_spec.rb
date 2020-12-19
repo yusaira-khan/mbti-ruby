@@ -31,7 +31,7 @@ RSpec.describe AspectsCollection do
     row = {'name'=>'mind', 'left'=> 'i', 'right'=> 'e', 'link'=>''}
 
     #act
-    method = create_map_function_with_preference mock
+    method = create_row_converter_with_preference mock
     aspect_hash =  method.call(row)
 
     #assert
