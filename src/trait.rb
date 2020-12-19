@@ -20,7 +20,8 @@ class Trait
 
   end
 
-  def percentage
+  def fraction
+    @mind.adjust_frac * @nature.adjust_frac * @energy.adjust_frac * @tactics.adjust_frac
   end
 
 end
