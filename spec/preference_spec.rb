@@ -12,3 +12,9 @@ RSpec.describe PreferencesList do
     expect(table[0]['aspect']).to eq('mind')
   end
 end
+
+RSpec.describe PreferencesList do
+  it 'constructor intro' do
+    p = Preference.new(name: 'Intro', initial: 'i')
+  end
+end
