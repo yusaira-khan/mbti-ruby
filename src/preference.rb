@@ -6,7 +6,7 @@ def max_fraction
       1.0
 end
 def display_per frac
-  "#{frac*100}%"
+  "#{'%.2f' % (frac*100)}%"
 end
 class Preference
   attr_accessor :opposite
@@ -26,14 +26,16 @@ class Preference
 
   end
   def adjust_frac
-    @percentage
+    (@fraction + 0.005)/1.01
+  end
+  def display_adjusted_percent
+    display_per adjust_frac
   end
   def display_percent
     display_per @fraction
-
   end
   def as_formatted_text
-    "#{@name}(#{@initial.upcase}): #{display_percent}"
+    "#{@name}(#{@initial.upcase}): #{display_adjusted_percent}"
   end
 end
 
