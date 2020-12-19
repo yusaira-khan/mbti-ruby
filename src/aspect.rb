@@ -3,6 +3,8 @@ class Aspect
 
   attr_reader :left
   attr_reader :right
+  attr_reader :name
+  attr_reader :link
   def initialize
   end
 
@@ -12,5 +14,5 @@ class Aspect
 
 end
 
-class AspectsList
+class AspectsCollection
 end
