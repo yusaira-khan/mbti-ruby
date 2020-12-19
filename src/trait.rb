@@ -13,8 +13,8 @@ class Trait
   def initialize(initials:, role_name:)
     @initials = initials
     @role_name = role_name
+    @mind, @energy, @nature, @tactics = @initials.split('')
 
-    # load data
   end
 
   def percentage

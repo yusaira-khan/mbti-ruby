@@ -7,9 +7,9 @@ RSpec.describe Trait do
     expect(t.initials).to eq('enfp')
     expect(t.role_name).to eq('Me')
     expect(t.mind).to eq('e')
-    #expect(t.energy).to eq('n')
-    #expect(t.nature).to eq('f')
-    #expect(t.tactics).to eq('p')
-    #expect(t.link).to eq('Me')
+    expect(t.energy).to eq('n')
+    expect(t.nature).to eq('f')
+    expect(t.tactics).to eq('p')
+    #expect(t.link).to eq('https://www.16personalities.com/enfp-personality')
   end
 end
