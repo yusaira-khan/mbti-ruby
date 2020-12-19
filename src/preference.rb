@@ -39,5 +39,13 @@ class Preference
   end
 end
 
-class PreferencesList
+class PreferencesCollection
+
+  attr_reader :collection
+  def initialize
+    table = CSV.parse(File.read('./data/preference.csv'), headers: true)
+    @collection = Hash[table.map { |row| [row['initial'], Preference.new(name: row['name'], initial:row['initial'])] }]
+
+  end
+
 end
