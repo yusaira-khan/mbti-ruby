@@ -10,7 +10,10 @@ class Trait
   attr_reader :initials
   attr_reader :link
 
-  def initialize
+  def initialize(initials:, role_name:)
+    @initials = initials
+    @role_name = role_name
+
     # load data
   end
 
