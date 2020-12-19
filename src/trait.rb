@@ -8,8 +8,10 @@ class Trait
   attr_reader :tactics
   attr_reader :role_name
   attr_reader :initials
-  attr_reader :link
 
+  def link
+    "https://www.16personalities.com/#{initials}-personality"
+  end
   def initialize(initials:, role_name:)
     @initials = initials
     @role_name = role_name

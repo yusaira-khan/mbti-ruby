@@ -10,6 +10,6 @@ RSpec.describe Trait do
     expect(t.energy).to eq('n')
     expect(t.nature).to eq('f')
     expect(t.tactics).to eq('p')
-    #expect(t.link).to eq('https://www.16personalities.com/enfp-personality')
+    expect(t.link).to eq('https://www.16personalities.com/enfp-personality')
   end
 end
