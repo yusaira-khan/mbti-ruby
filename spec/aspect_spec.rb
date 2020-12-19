@@ -1,5 +1,6 @@
 require 'preference'
 require 'aspect'
+require 'csv'
 
 
 
@@ -40,5 +41,10 @@ RSpec.describe AspectsCollection do
     expect(aspect.left).to eq(i)
     expect(aspect.right).to eq(e)
     expect(aspect_key).to eq('mind')
+  end
+  if 'construction'
+    p = PreferencesCollection.new
+    a = AspectsCollection.new p
+    expect(a.collection['mind'].name).to eq('mind')
   end
 end
