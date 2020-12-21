@@ -1,6 +1,7 @@
 require 'trait'
 require 'preference'
 
+delta=0.0000001
 MockPrefsC = Struct.new(:collection)
 RSpec.describe Trait do
   it 'construct from intials' do
@@ -24,19 +25,16 @@ RSpec.describe Trait do
     #arrange
     MockPrefFrac = Struct.new(:adjust_frac)
     i = MockPrefFrac.new(0.9)
-    c = {'a': i,'b': i, 'c': i, 'd': i}
+    c = {'a'=> i,'b'=> i, 'c'=> i, 'd'=> i}
     mock2 = MockPrefsC.new(c)
 
     #act
     t = Trait.new(initials: 'abcd', role_name: '', prefs: mock2)
-    puts t.initials
-    puts mock2
-    puts "what"
-    puts t.mind.class
+
 
 
     #assert
-    expect(t.fraction).to eq(0.9**4)
+    expect(t.fraction).to  be_within(delta).of(0.9**4)
   end
 
 end

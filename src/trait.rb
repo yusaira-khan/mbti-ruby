@@ -16,7 +16,9 @@ class Trait
     @initials = initials
     @role_name = role_name
     @mind, @energy, @nature, @tactics = \
-      @initials.split('').map { |i| prefs.collection[i] }
+      @initials.split('').map { \
+          |i| prefs.collection[i]
+      }
   end
 
   def fraction
