@@ -35,8 +35,13 @@ RSpec.describe Trait do
     expect(t.fraction).to  be_within(delta).of(0.9**4)
   end
   it 'Full Construction' do
+    #arrange
     p = PreferencesRepository.new
+
+    #act
     t = TraitsRepository.new p
+
+    #assert
     expect(t.collection['infp'].initials).to eq('infp')
     expect(t.collection['infp'].role_name).to eq('Mediator')
   end

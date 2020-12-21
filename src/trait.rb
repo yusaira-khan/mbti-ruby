@@ -1,8 +1,8 @@
 def create_traitrow_converter_with_preference(prefs)
   proc { |row|
-    [row['initials'],
+    [row['trait'],
      Trait.new(initials: row['trait'],
-               role_name: row['role_name'],
+               role_name: row['role'],
                prefs: prefs)]
   }
 end

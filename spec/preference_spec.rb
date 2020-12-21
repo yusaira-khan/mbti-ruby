@@ -1,4 +1,4 @@
-require 'preference '
+require 'preference'
 require 'csv'
 
 RSpec.describe PreferencesRepository do

@@ -22,7 +22,7 @@ class Aspect
   end
 end
 
-class AspectsCollection
+class AspectsRepository
   attr_reader :collection
   def initialize(p)
     table = CSV.parse(File.read('./data/aspect.csv'), headers: true)
