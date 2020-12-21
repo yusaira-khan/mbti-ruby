@@ -39,7 +39,7 @@ class Preference
   end
 end
 
-class PreferencesCollection
+class PreferencesRepository
 
   attr_reader :collection
   def initialize

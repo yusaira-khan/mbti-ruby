@@ -6,7 +6,7 @@ def create_traitrow_converter_with_preference(prefs)
                prefs: prefs)]
   }
 end
-class TraitsList
+class TraitsRepository
   attr_reader :collection
   def initialize(p)
     table = CSV.parse(File.read('./data/trait.csv'), headers: true)

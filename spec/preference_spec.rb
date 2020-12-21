@@ -1,8 +1,8 @@
-require 'preference'
+require 'preference '
 require 'csv'
 
-RSpec.describe PreferencesCollection do
-  let(:p) { PreferencesCollection.new }
+RSpec.describe PreferencesRepository do
+  let(:p) { PreferencesRepository.new }
   it 'validate csv read' do
     expect(p.collection['i'].name).to eq('Introverted')
   end

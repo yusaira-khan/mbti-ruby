@@ -20,7 +20,7 @@ RSpec.describe Aspect do
   end
 end
 
-RSpec.describe AspectsCollection do
+RSpec.describe AspectsRepository do
   it 'function' do
     # arrange
     MockPref = Struct.new(:collection)
@@ -42,8 +42,8 @@ RSpec.describe AspectsCollection do
     expect(aspect_key).to eq('mind')
   end
   it 'construction' do
-    p = PreferencesCollection.new
-    a = AspectsCollection.new p
+    p = PreferencesRepository.new
+    a = AspectsRepository.new p
     expect(a.collection['mind'].name).to eq('mind')
   end
 end
