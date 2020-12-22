@@ -1,10 +1,15 @@
+require 'csv'
 def create_traitrow_converter_with_preference(prefs)
-  proc { |row|
-    [row['trait'],
-     Trait.new(initials: row['trait'],
+  proc do |row|
+    trait_initials = row['trait']
+    aspect = trait_initials.split('').map do |i|
+      prefs.collection[i]
+    end
+    [trait_initials,
+     Trait.new(initials: trait_initials,
                role_name: row['role'],
-               prefs: prefs)]
-  }
+               relevant_prefs:aspect)]
+  end
 end
 class TraitsRepository
   attr_reader :collection
@@ -26,13 +31,10 @@ class Trait
     "https://www.16personalities.com/#{@initials}-personality"
   end
 
-  def initialize(initials:, role_name:, prefs:)
+  def initialize(initials:, role_name:, relevant_prefs:)
     @initials = initials
     @role_name = role_name
-    @mind, @energy, @nature, @tactics = \
-      @initials.split('').map do |i|
-        prefs.collection[i]
-      end
+    @mind, @energy, @nature, @tactics = relevant_prefs
   end
 
   def fraction
