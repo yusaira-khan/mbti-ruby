@@ -8,12 +8,12 @@ RSpec.describe Aspect do
   let(:e) {Preference.new(initial:'e', name:'Ex')}
   it 'construction opposites and left right' do
     a = Aspect.new(name: 'mind', l: i, r: e, link: 'www.google.com')
-    expect(i.opposite).to eq(e)
-    expect(e.opposite).to eq(i)
     expect(a.left).to eq(i)
     expect(a.right).to eq(e)
   end
   it 'percentage dominant' do
+    i.opposite = e
+    e.opposite = i
     a = Aspect.new(name: 'mind', l: i, r: e, link: 'www.google.com')
     i.sync_percent 10
     expect(a.dominant).to eq(e)

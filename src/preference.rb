@@ -39,13 +39,20 @@ class Preference
   end
 end
 
+def set_opposite(collection,table)
+  table.each do |row|
+    initial = collection[row['initial']]
+    opposite = collection[row['opposite_initial']]
+    initial.opposite = opposite
+  end
+end
 class PreferencesRepository
 
   attr_reader :collection
   def initialize
     table = CSV.parse(File.read('./data/preference.csv'), headers: true)
     @collection = Hash[table.map { |row| [row['initial'], Preference.new(name: row['name'], initial:row['initial'])] }]
-
+    set_opposite @collection, table
   end
 
 end
