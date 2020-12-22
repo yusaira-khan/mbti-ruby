@@ -8,7 +8,6 @@ RSpec.describe PreferencesRepository do
   end
 end
 
-
 RSpec.describe Preference do
   let(:intro) { Preference.new(name: 'Intro', initial: 'i') }
   let(:extro) { Preference.new(name: 'Extro', initial: 'e') }

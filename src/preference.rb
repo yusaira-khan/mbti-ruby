@@ -1,12 +1,14 @@
 #:require 'csv'
 def adjust_to_fraction(num)
-     num/100.0
+  num / 100.0
 end
+
 def max_fraction
-      1.0
+  1.0
 end
-def display_per frac
-  "#{'%.2f' % (frac*100)}%"
+
+def display_per(frac)
+  "#{format('%.2f', (frac * 100))}%"
 end
 class Preference
   attr_accessor :opposite
@@ -14,45 +16,47 @@ class Preference
   attr_reader :initial
   attr_accessor :fraction
 
-  def initialize (name:, initial:)
+  def initialize(name:, initial:)
     @name = name
     @initial = initial
     @fraction = 0.0
   end
 
-  def sync_percent (per)
+  def sync_percent(per)
     @fraction = adjust_to_fraction per
     opposite.fraction = max_fraction - @fraction
+  end
 
-  end
   def adjust_frac
-    (@fraction + 0.005)/1.01
+    (@fraction + 0.005) / 1.01
   end
+
   def display_adjusted_percent
     display_per adjust_frac
   end
+
   def display_percent
     display_per @fraction
   end
+
   def as_formatted_text
     "#{@name}(#{@initial.upcase}): #{display_adjusted_percent}"
   end
 end
 
-def set_opposite(collection,table)
+def set_opposite(collection, table)
   table.each do |row|
     initial = collection[row['initial']]
     opposite = collection[row['opposite_initial']]
     initial.opposite = opposite
   end
 end
-class PreferencesRepository
 
+class PreferencesRepository
   attr_reader :collection
   def initialize
     table = CSV.parse(File.read('./data/preference.csv'), headers: true)
-    @collection = Hash[table.map { |row| [row['initial'], Preference.new(name: row['name'], initial:row['initial'])] }]
+    @collection = Hash[table.map { |row| [row['initial'], Preference.new(name: row['name'], initial: row['initial'])] }]
     set_opposite @collection, table
   end
-
 end

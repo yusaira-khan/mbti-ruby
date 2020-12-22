@@ -1,14 +1,12 @@
 require 'trait'
 require 'preference'
 
-delta=0.0000001
+delta = 0.0000001
 RSpec.describe Trait do
   it 'construct from intials' do
+    t = Trait.new(initials: 'enfp', role_name: 'Me', relevant_prefs: %i[e n f p])
 
-
-    t = Trait.new(initials: 'enfp', role_name: 'Me', relevant_prefs:[:e,:n,:f,:p])
-
-    #assert
+    # assert
     expect(t.initials).to eq('enfp')
     expect(t.role_name).to eq('Me')
     expect(t.mind).to eq(:e)
@@ -18,26 +16,25 @@ RSpec.describe Trait do
     expect(t.link).to eq('https://www.16personalities.com/enfp-personality')
   end
   it 'Fraction' do
-    #arrange
+    # arrange
     MockPrefFrac = Struct.new(:adjust_frac)
     i = MockPrefFrac.new(0.9)
 
-    #act
-    t = Trait.new(initials: 'abcd', role_name: '', relevant_prefs: [i,i,i,i])
+    # act
+    t = Trait.new(initials: 'abcd', role_name: '', relevant_prefs: [i, i, i, i])
 
-    #assert
-    expect(t.fraction).to  be_within(delta).of(0.9**4)
+    # assert
+    expect(t.fraction).to be_within(delta).of(0.9**4)
   end
   it 'Full Construction' do
-    #arrange
+    # arrange
     p = PreferencesRepository.new
 
-    #act
+    # act
     t = TraitsRepository.new p
 
-    #assert
+    # assert
     expect(t.collection['infp'].initials).to eq('infp')
     expect(t.collection['infp'].role_name).to eq('Mediator')
   end
-
 end

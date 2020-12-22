@@ -8,7 +8,7 @@ def create_traitrow_converter_with_preference(prefs)
     [trait_initials,
      Trait.new(initials: trait_initials,
                role_name: row['role'],
-               relevant_prefs:aspect)]
+               relevant_prefs: aspect)]
   end
 end
 class TraitsRepository

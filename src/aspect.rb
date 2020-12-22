@@ -5,12 +5,13 @@ class Aspect
   attr_reader :right
   attr_reader :name
   attr_reader :link
-  def initialize (name:,l:,r:,link:)
+  def initialize(name:, l:, r:, link:)
     @name = name
     @left = l
     @right = r
     @link = link
   end
+
   def dominant
     if @left.fraction >= @right.fraction
       @left
@@ -30,10 +31,11 @@ class AspectsRepository
 end
 
 def create_row_converter_with_preference(prefs)
-  Proc.new { |row| [row['name'],
-                    Aspect.new(name: row['name'],
-                               link: row['link'],
-                               l: prefs.collection[row['left']],
-                               r: prefs.collection[row['right']]
-                              )]}
+  proc { |row|
+    [row['name'],
+     Aspect.new(name: row['name'],
+                link: row['link'],
+                l: prefs.collection[row['left']],
+                r: prefs.collection[row['right']])]
+  }
 end
