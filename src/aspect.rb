@@ -28,6 +28,13 @@ class AspectsRepository
     convert_row = create_row_converter_with_preference(p)
     @collection = Hash[table.map(&convert_row)]
   end
+
+  def set_aspect_in_prefs():
+      @collection.each do |_,a|
+        a.left.aspect = a
+        a.right.aspect = a
+      end
+  end
 end
 
 def create_row_converter_with_preference(prefs)

@@ -12,6 +12,7 @@ def display_per(frac)
 end
 class Preference
   attr_accessor :opposite
+  attr_accessor :aspect
   attr_reader :name
   attr_reader :initial
   attr_accessor :fraction
