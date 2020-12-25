@@ -13,7 +13,7 @@ RSpec.describe Aspect do
     i.opposite = e
     e.opposite = i
     a = Aspect.new(name: 'mind', l: i, r: e, link: 'www.google.com')
-    i.sync_percent 10
+    i.sync_percent! 10
     expect(a.dominant).to eq(e)
   end
 end

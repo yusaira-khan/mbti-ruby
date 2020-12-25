@@ -38,10 +38,10 @@ class Trait
 
   end
 
-  def nature
+  def energy
     @prefs[1]
   end
-  def energy
+  def mind
     @prefs[0]
   end
   def nature
