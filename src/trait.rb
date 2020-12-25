@@ -1,4 +1,5 @@
 require 'csv'
+require 'percent'
 def create_traitrow_converter_with_preference(prefs)
   proc do |row|
     trait_initials = row['trait']
@@ -18,12 +19,11 @@ class TraitsRepository
     convert_row = create_traitrow_converter_with_preference(p)
     @collection = Hash[table.map(&convert_row)]
   end
+  def sorted
+    @collection.values.sort
+  end
 end
 class Trait
-  attr_reader :energy
-  attr_reader :mind
-  attr_reader :nature
-  attr_reader :tactics
   attr_reader :role_name
   attr_reader :initials
 
@@ -34,10 +34,35 @@ class Trait
   def initialize(initials:, role_name:, relevant_prefs:)
     @initials = initials
     @role_name = role_name
-    @mind, @energy, @nature, @tactics = relevant_prefs
+    @prefs =  relevant_prefs
+
   end
 
-  def fraction
-    @mind.adjust_frac * @nature.adjust_frac * @energy.adjust_frac * @tactics.adjust_frac
+  def nature
+    @prefs[1]
   end
+  def energy
+    @prefs[0]
+  end
+  def nature
+    @prefs[2]
+  end
+  def tactics
+    @prefs[3]
+  end
+  def fraction
+    @prefs.map(&:adjust_frac).reduce(:*)
+  end
+  def display_percent
+    display_per fraction
+  end
+
+  def display()
+    "#{@initials.upcase}(#{@}): #{display_percent}"
+  end
+
+  def <=> (other)
+    self.fraction <=> other.fraction
+  end
+
 end

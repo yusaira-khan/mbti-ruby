@@ -11,19 +11,15 @@ class Personality
     @traits = TraitsRepository.new @traits
   end
 
-  def get
-    @prefs,@aspects,@traits
-  end
   def quick(l)
-    @aspects.collection.each do |a|
-      a.left
-    end
+    @aspects.set_all_percent(l)
+  end
+  def print()
   end
 end
 
 
 per = Personality.new
-p,a,t= per.get
 
 options = {}
 OptionParser.new do |opts|
