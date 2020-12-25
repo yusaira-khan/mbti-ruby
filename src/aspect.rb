@@ -27,9 +27,10 @@ class AspectsRepository
     table = CSV.parse(File.read('./data/aspect.csv'), headers: true)
     convert_row = create_row_converter_with_preference(p)
     @collection = Hash[table.map(&convert_row)]
+    set_aspect_in_prefs
   end
 
-  def set_aspect_in_prefs():
+  def set_aspect_in_prefs
       @collection.each do |_,a|
         a.left.aspect = a
         a.right.aspect = a
