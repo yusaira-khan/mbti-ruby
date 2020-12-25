@@ -62,7 +62,7 @@ class Trait
   end
 
   def <=> (other)
-    self.fraction <=> other.fraction
+    other.fraction <=> self.fraction
   end
 
 end

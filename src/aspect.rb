@@ -29,13 +29,13 @@ class AspectsRepository
   def initialize(p)
     table = CSV.parse(File.read('./data/aspect.csv'), headers: true)
     convert_row = create_row_converter_with_preference(p)
-    @rowssorder = table.map{ |r| r['name'] }
+    @row_order = table.map{ |r| r['name'] }
     @collection = Hash[table.map(&convert_row)]
   end
 
   def quick! (l)
       @row_order.each_with_index do |n,i|
-        @collection[n].quick_percent![i]
+        @collection[n].quick_percent! l[i]
       end
   end
 
