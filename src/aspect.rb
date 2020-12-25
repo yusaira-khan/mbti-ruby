@@ -19,8 +19,8 @@ class Aspect
       @right
     end
   end
-  def set_left_percentage(per)
-    @left.sync_percent(per)
+  def quick_percent!(per)
+    @left.sync_percent!(per)
   end
 end
 
@@ -33,9 +33,9 @@ class AspectsRepository
     @collection = Hash[table.map(&convert_row)]
   end
 
-  def set_all_left_percentage (l):
+  def quick! (l)
       @row_order.each_with_index do |n,i|
-        @collection[n].set_percent l[i]
+        @collection[n].quick_percent![i]
       end
   end
 

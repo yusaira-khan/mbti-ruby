@@ -1,3 +1,4 @@
+$LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'preference'
 require 'aspect'
 require 'trait'
@@ -11,10 +12,11 @@ class Personality
     @traits = TraitsRepository.new @traits
   end
 
-  def quick(l)
-    @aspects.set_all_percent(l)
+  def quick!(l)
+    @aspects.quick!(l)
   end
-  def print()
+  def display()
+    @traits.sort.map(&:display).join('\n')
   end
 end
 
@@ -25,7 +27,7 @@ options = {}
 OptionParser.new do |opts|
   opts.banner = "Usage: example.rb [options]"
   opts.on('--list_as_intj i,n,t,j',Array) do |l|
-    options{:l} = l
+    options[:l] = l
   end
 end.parse!
 

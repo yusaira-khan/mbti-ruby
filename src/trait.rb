@@ -58,7 +58,7 @@ class Trait
   end
 
   def display()
-    "#{@initials.upcase}(#{@}): #{display_percent}"
+    "#{@initials.upcase}(#{@role_name}): #{display_percent}"
   end
 
   def <=> (other)

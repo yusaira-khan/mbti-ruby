@@ -13,7 +13,7 @@ class Preference
     @fraction = 0.0
   end
 
-  def sync_percent(per)
+  def sync_percent!(per)
     @fraction = adjust_to_fraction per
     opposite.fraction = max_fraction - @fraction
   end
