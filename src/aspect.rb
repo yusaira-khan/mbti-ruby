@@ -19,6 +19,9 @@ class Aspect
       @right
     end
   end
+  def set_left_percentage(per)
+    @left.sync_percent(per)
+  end
 end
 
 class AspectsRepository
@@ -26,16 +29,16 @@ class AspectsRepository
   def initialize(p)
     table = CSV.parse(File.read('./data/aspect.csv'), headers: true)
     convert_row = create_row_converter_with_preference(p)
+    @rowssorder = table.map{ |r| r['name'] }
     @collection = Hash[table.map(&convert_row)]
-    set_aspect_in_prefs
   end
 
-  def set_aspect_in_prefs
-      @collection.each do |_,a|
-        a.left.aspect = a
-        a.right.aspect = a
+  def set_all_left_percentage (l):
+      @row_order.each_with_index do |n,i|
+        @collection[n].set_percent l[i]
       end
   end
+
 end
 
 def create_row_converter_with_preference(prefs)
