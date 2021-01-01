@@ -16,5 +16,5 @@ get '/table' do
   per = Personality.new
   fl = l.map(&Kernel.method(:sanitize_per))
   per = Personality.new
-  per.quick!(fl)
+  per.quick_htm!(fl)
 end
