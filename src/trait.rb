@@ -60,6 +60,9 @@ class Trait
   def display()
     "#{@initials.upcase}(#{@role_name}): #{display_percent}"
   end
+  def display_html()
+    "<tr> <td><a href=\"#{link}\">#{@initials.upcase}</td> <td>#{@role_name}</td> <td>#{display_percent} </td> </tr> "
+  end
 
   def <=> (other)
     other.fraction <=> self.fraction
