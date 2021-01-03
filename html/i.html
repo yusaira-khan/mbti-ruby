@@ -3,6 +3,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./bulma.min.css" type="text/css">
     <link rel="stylesheet" href="./bulma-slider.min.css" type="text/css">
+    <link rel="stylesheet" href="./fontawesome.min.css" type="text/css">
+    <link rel="stylesheet" href="./solid.min.css" type="text/css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2&display=swap" rel="stylesheet">
     <style>
@@ -32,7 +34,7 @@
             text-align: right;
             padding-left: 1em;
             padding-right: 1em;
-            min-width: 100%;
+            min-width: 5em;
             display: inline-block;
 
         }
@@ -62,12 +64,22 @@
         }
 
         input[type=range].slider::-ms-fill-lower {
-            background: #var(--pur)
+            background: var(--pur)
         }
 
         input[type=range].slider::-ms-fill-upper {
-            background: #var(--pur)
+            background: var(--pur)
         }
+     .button.column{
+         padding-top:0;
+         padding-bottom:0;
+         background-color:var(--pur-bright);
+         color:var(--grey-light);
+         font-family: "Baloo Da 2", cursive;
+     }
+     .bye{
+         color=var(--pur-bright);
+     }
     </style>
 </head>
 
@@ -82,23 +94,79 @@
         <div class="tile is-ancestor is-vertical">
         <div class="tile is-parent">
 
+            <div class="tile is-child columns is-centered is-mobile">
+                <div class="column is-narrow">
+                    <div class="label-output">Introverted</div>
+                    <output for="i">50</output>
+                </div>
+                <div class="column is-half has-text-centered">
+                    <div class="label-input"><a href="https://www.16personalities.com/articles/mind-introverted-vs-extraverted">Mind</a></div>
+                    <input id="i" name="i" class="slider is-fullwidth is-large " step="1" min="0" max="100" value="50" type="range">
+                </div>
+                <div class="column is-narrow">
+                    <div class="label-output">Extraverted</div>
+                    <output for="i-right">50</output>
+                </div>
+            </div>
         <div class="tile is-child columns is-centered is-mobile">
             <div class="column is-narrow">
-                <div class="label-output">Introversion</div>
-                <output for="i">50</output>
+                <div class="label-output">Intuitive</div>
+                <output for="n">50</output>
             </div>
             <div class="column is-half has-text-centered">
-                <div class="label-input"><a>Mind</a></div>
-                <input id="i" name="i" class="slider is-fullwidth is-large " step="1" min="0" max="100" value="50" type="range">
+                <div class="label-input"><a href="https://www.16personalities.com/articles/energy-intuitive-vs-observant">Energy</a></div>
+                <input id="n" name="n" class="slider is-fullwidth is-large " step="1" min="0" max="100" value="50" type="range">
             </div>
             <div class="column is-narrow">
-                <div class="label-output">Extraversion</div>
-                <output for="i-right">50</output>
+                <div class="label-output">Observant</div>
+                <output for="n-right">50</output>
             </div>
         </div>
+
+        </div>
+
+        <div class="tile is-parent">
+
+        <div class="tile is-child columns is-centered is-mobile">
+            <div class="column is-narrow">
+                <div class="label-output">Thinking</div>
+                <output for="t">50</output>
+            </div>
+            <div class="column is-half has-text-centered">
+                <div class="label-input"><a href="https://www.16personalities.com/articles/nature-thinking-vs-feeling">Nature</a></div>
+                <input id="t" name="t" class="slider is-fullwidth is-large " step="1" min="0" max="100" value="50" type="range">
+            </div>
+            <div class="column is-narrow">
+                <div class="label-output">Feeling</div>
+                <output for="t-right">50</output>
+            </div>
+        </div>
+        <div class="tile is-child columns is-centered is-mobile">
+            <div class="column is-narrow">
+                <div class="label-output">Judging</div>
+                <output for="j">50</output>
+            </div>
+            <div class="column is-half has-text-centered">
+                <div class="label-input"><a href="https://www.16personalities.com/articles/tactics-judging-vs-prospecting">Tactics</a></div>
+                <input id="j" name="j" class="slider is-fullwidth is-large " step="1" min="0" max="100" value="50" type="range">
+            </div>
+            <div class="column is-narrow">
+                <div class="label-output">Prospecting</div>
+                <output for="j-right">50</output>
+            </div>
+        </div>
+        </div>
+        <div class="columns is-centered is-mobile">
+        <input type="submit"  class="button column is-narrow" value="Submit">
         </div>
         </div>
     </form>
+    <div>
+        <span class="icon bye">
+            <i class="fas fa-crow"></i>
+        </span>
+
+        </div>
     <script src="./bulma-slider.js"></script>
     <script>
         bulmaSlider.attach();
