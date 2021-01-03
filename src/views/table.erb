@@ -1,8 +1,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./bulma.min.css" type="text/css">
-    <link rel="stylesheet" href="./table.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/bulma.min.css" type="text/css">
+    <link rel="stylesheet" href="/table.css" type="text/css">
 </head>
 
 <body>
@@ -21,7 +23,7 @@
                 </tr>
                 <% for  @tr in @traits%>
                 <tr>
-                    <td><a href="<%= @tr.link %>"> <%= @tr.initials %></td>
+                    <td><a href="<%= @tr.link %>"> <%= @tr.initials.upcase %></td>
                     <td> <%= @tr.role_name %></td>
                     <td> <%= @tr.display_percent %> </td>
                 </tr>
