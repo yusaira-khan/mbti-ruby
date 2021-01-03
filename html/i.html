@@ -7,85 +7,13 @@
     <link rel="stylesheet" href="./solid.min.css" type="text/css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --pur-bright: #7003ff;
-            --pur-light: #e2ccff;
-            --grey-light: #eee;
-            --grey-dark: #444;
-            --pur: var(--pur-light);
-        }
-
-        body {
-            background-color: var(--grey-light);
-            min-height: 100vh;
-            font-family: "Baloo Da 2", cursive;
-        }
-
-        .navbar,
-        .navbar a {
-            background-color: var(--pur-bright);
-            color: var(--grey-light);
-        }
-
-        output {
-            background-color: var(--pur);
-            text-align: right;
-            padding-left: 1em;
-            padding-right: 1em;
-            min-width: 5em;
-            display: inline-block;
-
-        }
-
-        .label-output {
-            margin-bottom: 0.25em;
-        }
-
-        .label-input {
-            font-size: 1.25em;
-        }
-
-        .slider {
-            margin-top: 0 !important;
-        }
-
-        input[type=range].slider::-moz-range-track {
-            background: var(--pur) !important
-        }
-
-        input[type=range].slider::-webkit-slider-runnable-track {
-            background: var(--pur) !important
-        }
-
-        input[type=range].slider::-ms-track {
-            background: var(--pur) !important
-        }
-
-        input[type=range].slider::-ms-fill-lower {
-            background: var(--pur)
-        }
-
-        input[type=range].slider::-ms-fill-upper {
-            background: var(--pur)
-        }
-     .button.column{
-         padding-top:0;
-         padding-bottom:0;
-         background-color:var(--pur-bright);
-         color:var(--grey-light);
-         font-family: "Baloo Da 2", cursive;
-     }
-     .bye{
-         color=var(--pur-bright);
-     }
-    </style>
+    <link rel="stylesheet" href="./i.css" type="text/css">
 </head>
 
 <body>
     <header class="navbar" aria-label="main navigation">
         <div class="navbar-brand is-size-1">
-            <a>MBTI</a>
+            <a>MBTI all percentages</a>
         </div>
     </header>
     http://127.0.0.1:4567/table?i=44&n=70&t=49&j=20
@@ -156,7 +84,7 @@
         </div>
         </div>
         <div class="columns is-centered is-mobile">
-        <input type="submit"  class="button column is-narrow" value="Submit">
+        <input type="submit"  class="button column is-narrow is-large is-rounded" value="Submit">
         </div>
         </div>
     </form>
