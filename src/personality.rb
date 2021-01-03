@@ -21,8 +21,11 @@ class Personality
  end
 
   def quick_htm!(l)
-    @aspects.quick!(l)
     display_html
+  end
+  def quick_erb!()
+    @aspects.quick!(l)
+    @traits.sorted
   end
 
 end
