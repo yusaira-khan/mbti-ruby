@@ -256,7 +256,7 @@
                     new Date().getTime() +
                     Math.floor(Math.random() * Math.floor(9999));
                   this.output = this._findOutputForSlider();
-                  this.outputRight = this._findOutputRightForSlider();
+                  this.outputRight = this._findRightOutputForSlider();
 
                   this._bindEvents();
 
