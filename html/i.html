@@ -17,28 +17,37 @@
         body {
             background-color: var(--grey-light);
             min-height: 100vh;
-            font-family:"Baloo Da 2", cursive;
+            font-family: "Baloo Da 2", cursive;
 
         }
 
-        .navbar, .navbar a {
+        .navbar,
+        .navbar a {
             background-color: var(--pur-bright);
             color: var(--grey-light);
         }
 
         output {
             background-color: var(--pur);
-            min-width:3.5em;
-            text-align:right;
-            padding-left:1em;
-            padding-right:1em;
+            text-align: right;
+            padding-left: 1em;
+            padding-right: 1em;
+            min-width: 100%;
+            display: inline-block;
 
         }
-     .column{
 
-         display:flex;
-         align-items: center;
-     }
+        .label-output {
+            margin-bottom: 0.25em;
+        }
+
+        .label-input {
+            font-size: 1.25em;
+        }
+
+        .slider {
+            margin-top: 0 !important;
+        }
 
         input[type=range].slider::-moz-range-track {
             background: var(--pur) !important
@@ -69,17 +78,27 @@
         </div>
     </header>
     http://127.0.0.1:4567/table?i=44&n=70&t=49&j=20
-    <section class="columns is-centered is-mobile">
-        <div class="column is-narrow">
-            <output for="sliderWithValue">50</output>
+    <form class="is-size-4-desktop is-5-touch">
+        <div class="tile is-ancestor is-vertical">
+        <div class="tile is-parent">
+
+        <div class="tile is-child columns is-centered is-mobile">
+            <div class="column is-narrow">
+                <div class="label-output">Introversion</div>
+                <output for="i">50</output>
+            </div>
+            <div class="column is-half has-text-centered">
+                <div class="label-input"><a>Mind</a></div>
+                <input id="i" name="i" class="slider is-fullwidth is-large " step="1" min="0" max="100" value="50" type="range">
+            </div>
+            <div class="column is-narrow">
+                <div class="label-output">Extraversion</div>
+                <output for="i-right">50</output>
+            </div>
         </div>
-        <div class="column is-half">
-            <input id="sliderWithValue" class="slider is-fullwidth is-large " step="1" min="0" max="100" value="50" type="range">
         </div>
-        <div class="column is-narrow">
-            <output for="sliderWithValue-right">50</output>
         </div>
-    </section>
+    </form>
     <script src="./bulma-slider.js"></script>
     <script>
         bulmaSlider.attach();
