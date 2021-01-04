@@ -1,1 +1,41 @@
-../html/table.css
+:root {
+    --pur-bright: #7003ff;
+    --pur-light: #fff;
+    --pur-light2: #f1e6ff;
+    --grey-light: #f7f7f7;
+    --grey-dark: #222;
+    --pur-dark: #611abd;
+    --pur: var(--pur-light);
+    --pur-link: #7c32db;
+    }
+body {
+    background-color: var(--grey-light);
+    min-height: 100vh;
+    font-family: "Baloo Da 2", cursive;
+}
+.navbar,
+.navbar a, .navbar a:hover {
+    background-color: var(--pur-bright);
+    color: var(--grey-light);
+}
+.table{
+    background-color:var(--pur-light2);
+}
+.table.is-striped tbody tr:not(.is-selected):nth-child(even) {
+    background-color:var(--pur-light);
+    }
+.table th {
+    color:var(--pur-dark);
+    }
+.table th, .table td {
+border: 1px solid var(--pur-dark);
+    }
+a,a:hover{
+    color:var(--pur-link);
+}
+.table{
+    imargin-top:1em;
+}
+.navbar-brand{
+    margin-left:1em;
+}

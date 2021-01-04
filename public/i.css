@@ -1,1 +1,97 @@
-../html/i.css
+:root {
+    --pur-bright: #7003ff;
+    --pur-light: #e2ccff;
+    --grey-light: #f7f7f7;
+    --grey-dark: #222;
+    --pur: var(--pur-light);
+    --pur-link: #7c32db;
+}
+
+body {
+    background-color: var(--grey-light);
+    min-height: 100vh;
+    font-family: "Baloo Da 2", cursive;
+}
+
+.navbar,
+.navbar a,
+.navbar a:hover {
+    background-color: var(--pur-bright);
+    color: var(--grey-light);
+}
+
+.navbar,
+    {
+    background-color: var(--pur-bright);
+}
+
+output {
+    background-color: var(--pur);
+    text-align: right;
+    padding-left: 1em;
+    padding-right: 1em;
+    min-width: 5em;
+    display: inline-block;
+
+}
+
+.label-output {
+    margin-bottom: 0.25em;
+    text-align: center;
+}
+
+.label-input {
+    font-size: 1.25em;
+}
+
+.slider {
+    margin-top: 0 !important;
+}
+
+input[type=range].slider::-moz-range-track {
+    background: var(--pur) !important
+}
+
+input[type=range].slider::-webkit-slider-runnable-track {
+    background: var(--pur) !important
+}
+
+input[type=range].slider::-ms-track {
+    background: var(--pur) !important
+}
+
+input[type=range].slider::-ms-fill-lower {
+    background: var(--pur)
+}
+
+input[type=range].slider::-ms-fill-upper {
+    background: var(--pur)
+}
+
+.button.column {
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: var(--pur-bright);
+    color: var(--grey-light);
+    font-family: "Baloo Da 2", cursive;
+}
+
+.bye {
+    color: var(--pur-bright);
+    height: 20vh;
+    display:none;
+}
+
+a,
+a:hover {
+    color: var(--pur-link);
+}
+
+.navbar-brand {
+    margin-left: 1em;
+}
+
+.is-child {
+    padding-left: 1em;
+    padding-right: 1em;
+}
