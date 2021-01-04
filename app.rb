@@ -1,4 +1,4 @@
-$LOAD_PATH.unshift(File.dirname(__FILE__)) +'/src'
+$LOAD_PATH.unshift(File.dirname(__FILE__) +'/src')
 require 'sinatra'
 require 'preference'
 require 'aspect'
